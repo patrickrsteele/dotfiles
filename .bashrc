@@ -32,26 +32,22 @@ synclient TouchpadOff=1
 # White		97	
 
 
-# Appearance
+# PS1 Appearance
 
-NC='\e[0m'
+NC='\[\e[0m\]'
+red='\[\e[0;31m\]'
+lred='\[\e[1;31m\]'
+dgray='\[\e[0;90m\]'
+lgray='\[\e[0;37m\]'
+yellow='\[\e[0;95m\]'
+lpurple='\[\e[0;95m\]'
+lblue='\[\e[1;34m\]'
+black='\[\e[0;30m\]'
+blue='\[\e[0;34m\]'
+lgreen='\[\e[0;92m\]'
+white='\[\e[0;97m\]'
 
-dbackground='97'
-dforeground='30'
-
-red='\e[0;31m'
-lred='\e[1;31m'
-dgray='\e[0;90m'
-lgray='\e[0;37m'
-yellow='\e[0;95m'
-lpurple='\e[0;95m'
-lblue='\e[1;34m'
-black='\e[0;30m'
-blue='\e[0;34m'
-lgreen='\e[0;92m'
-white='\e[0;97m'
-
-PS1="\[${dgray}\][\[${lblue}\]\t\[${dgray}\]][\[${lblue}\]\u@\h\[${dgray}\]][\[${lred}\]\W\[${dgray}\]]\[${black}\]\[${NC}\] \$ "
+PS1="${dgray}[${lblue}\t${dgray}][${lblue}\u@\h${dgray}][${lred}\W${dgray}]${NC} \$ "
 
 # Aliases
 alias ls='ls --color'
