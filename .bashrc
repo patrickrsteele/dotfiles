@@ -47,7 +47,14 @@ blue='\[\e[0;34m\]'
 lgreen='\[\e[0;92m\]'
 white='\[\e[0;97m\]'
 
-PS1="${dgray}[${lblue}\t${dgray}][${lblue}\u@\h${dgray}][${lred}\W${dgray}]${NC} \$ "
+usercolor=${lblue}
+hostcolor=${lblue}
+timecolor=${lblue}
+dircolor=${lred}
+sepcolor=${lgray}
+
+PS1="${usercolor}\u ${sepcolor}on ${hostcolor}\h ${sepcolor}at ${timecolor}\t"\
+" ${sepcolor}in ${dircolor}\w ${lgray}\n\$ ${NC}"
 
 # Aliases
 alias ls='ls --color'
