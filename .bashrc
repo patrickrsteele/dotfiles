@@ -34,27 +34,33 @@ synclient TouchpadOff=1
 
 # PS1 Appearance
 
-NC='\[\e[0m\]'
+black='\[\e[0;30m\]'
+dgray='\[\e[0;90m\]'
+blue='\[\e[0;34m\]'
+lblue='\[\e[1;34m\]'
+green='\[\e[0;32m\]'
+lgreen='\[\e[1;32m\]'
+cyan='\[\e[0;36m\]'
+lcyan='\[\e[1;36m\]'
 red='\[\e[0;31m\]'
 lred='\[\e[1;31m\]'
-dgray='\[\e[0;90m\]'
+purple='\[\e[0;35m\]'
+lpurple='\[\e[1;35m\]'
+brown='\[\e[0;33m\]'
+yellow='\[\e[0;33m\]'
 lgray='\[\e[0;37m\]'
-yellow='\[\e[0;95m\]'
-lpurple='\[\e[0;95m\]'
-lblue='\[\e[1;34m\]'
-black='\[\e[0;30m\]'
-blue='\[\e[0;34m\]'
-lgreen='\[\e[0;92m\]'
 white='\[\e[0;97m\]'
+NC='\[\e[0m\]'
 
-usercolor=${lblue}
-hostcolor=${lblue}
-timecolor=${lblue}
-dircolor=${lred}
+usercolor=${cyan}
+hostcolor=${cyan}
+timecolor=${lcyan}
+dircolor=${green}
 sepcolor=${lgray}
 
-PS1="${usercolor}\u ${sepcolor}on ${hostcolor}\h ${sepcolor}at ${timecolor}\t"\
-" ${sepcolor}in ${dircolor}\w ${lgray}\n\$ ${NC}"
+PS1="${timecolor}\t ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
+
+#PS1="${sepcolor}at ${timecolor}\t ${sepcolor}in ${dircolor}\w ${lgray}\n${usercolor}\u ${sepcolor}on ${hostcolor}\h \$ ${NC}"
 
 # Aliases
 alias ls='ls --color'
