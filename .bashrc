@@ -54,11 +54,11 @@ NC='\[\e[0m\]'
 
 usercolor=${cyan}
 hostcolor=${cyan}
-timecolor=${lcyan}
+timecolor=${green}
 dircolor=${green}
 sepcolor=${lgray}
 
-PS1="${timecolor}\t ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
+PS1="${timecolor}\t `date '+%a %d %b %Y'` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
 
 #PS1="${sepcolor}at ${timecolor}\t ${sepcolor}in ${dircolor}\w ${lgray}\n${usercolor}\u ${sepcolor}on ${hostcolor}\h \$ ${NC}"
 
