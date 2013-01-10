@@ -8,7 +8,7 @@ fi
 # User specific aliases and functions
 
 # Turn off the touchpad
-synclient TouchpadOff=1
+#synclient TouchpadOff=1
 
 # Turn on the touchpad
 #synclient TouchpadOff=0
@@ -56,12 +56,9 @@ usercolor=${cyan}
 hostcolor=${cyan}
 timecolor=${green}
 dircolor=${green}
-sepcolor=${lgray}
+sepcolor=${purple}
 
-PS1="${timecolor}\t `date '+%a %d %b %Y'` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
-
-# Save history
-shopt -s histappend
+PS1="${timecolor}\t \`date '+%a %d %b %Y'\` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
 
 # Read and update history after every command; useful when working
 # with multiple terminal windows

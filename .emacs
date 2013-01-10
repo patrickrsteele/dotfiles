@@ -32,7 +32,7 @@
 (column-number-mode 't)
 
 ;; Stop C-z from backgrounding emacs
-(global-set-key "\C-z" 'shell)
+(global-set-key "\C-z" '(lambda () (interactive) (ansi-term "/bin/bash")))
 
 ;; Enable upcase-region command
 (put 'upcase-region 'disabled nil)
@@ -118,7 +118,18 @@
 
 (add-hook 'octave-mode-hook 'RET-behaves-as-LFD)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; C, C++
+;;
 
+(add-hook 'c-mode-hook 
+	  '(lambda ()
+	     (local-set-key (kbd "RET") 'newline-and-indent)))
+
+(add-hook 'c++-mode-hook 
+	  '(lambda ()
+	     (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -136,8 +147,8 @@
 ;;
 ;; GO
 ;;
-(add-to-list 'load-path "~/local/go/misc/emacs")
-(require 'go-mode-load)
+;; (add-to-list 'load-path "~/local/go/misc/emacs")
+;; (require 'go-mode-load)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -150,3 +161,4 @@
 ;; Remove the toolbar; has to be done down here, rather than at the
 ;; top for some reason.
 (tool-bar-mode -1)
+(set-scroll-bar-mode 'nil)
