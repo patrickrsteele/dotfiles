@@ -62,6 +62,7 @@ PS1="${timecolor}\t \`date '+%a %d %b %Y'\` ${sepcolor}[${dircolor}\w${sepcolor}
 
 # Read and update history after every command; useful when working
 # with multiple terminal windows
+shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
 
 # Aliases
