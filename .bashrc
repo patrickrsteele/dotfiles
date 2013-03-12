@@ -77,7 +77,7 @@ export TEXINPUTS=".:~/share//:"
 export BIBINPUTS=".:~/share//:"
 
 # Help Python find local modules
-export PYTHONPATH="./:"
+export PYTHONPATH="./:/home/prsteele/share//:"
 
 # Make emacs the default git editor
 export GIT_EDITOR="emacs -Q"
@@ -86,4 +86,7 @@ export GIT_EDITOR="emacs -Q"
 export PATH=$PATH":~/bin"
 
 # Suppose the GO language
-export GOPATH="~/local/go/"
+export GOPATH="/home/prsteele/local/go"
+
+# Bind CAPSLOCK to CTRL
+/usr/bin/setxkbmap -option "ctrl:nocaps"
