@@ -145,10 +145,21 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
+;; Helm
+;;
+(add-to-list 'load-path "~/lib/helm")
+(require 'helm-config)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
 ;; GO
 ;;
-;; (add-to-list 'load-path "~/local/go/misc/emacs")
-;; (require 'go-mode-load)
+(add-to-list 'load-path "~/local/go/misc/emacs")
+(require 'go-mode-load)
+(add-hook 'go-mode-hook
+	  '(lambda ()
+	     (setq default-tab-width 2)))
+(add-hook 'before-save-hook #'gofmt-before-save)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
