@@ -8,7 +8,7 @@ fi
 # User specific aliases and functions
 
 # Turn off the touchpad
-#synclient TouchpadOff=1
+synclient TouchpadOff=1
 
 # Turn on the touchpad
 #synclient TouchpadOff=0
