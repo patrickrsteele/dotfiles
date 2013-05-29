@@ -85,8 +85,11 @@ export GIT_EDITOR="emacs -Q"
 # Add local executables to the path
 export PATH=$PATH":~/bin"
 
-# Suppose the GO language
-export GOPATH="/home/prsteele/local/go"
+# Set up GOLANG
+export GOROOT=~/local/go
+
+# Add GO to the path
+export PATH=$PATH:$GOROOT/bin
 
 # Bind CAPSLOCK to CTRL
 /usr/bin/setxkbmap -option "ctrl:nocaps"
