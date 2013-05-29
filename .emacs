@@ -124,11 +124,11 @@
 ;;
 
 (add-hook 'c-mode-hook 
-	  '(lambda ()
+	  '(lambda()
 	     (local-set-key (kbd "RET") 'newline-and-indent)))
 
 (add-hook 'c++-mode-hook 
-	  '(lambda ()
+	  '(lambda()
 	     (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -140,7 +140,7 @@
 (add-hook 'go-mode-hook
 	  '(lambda ()
 	     (setq default-tab-width 2)))
-(add-hook 'before-save-hook #'gofmt-before-save)
+(add-hook 'before-save-hook 'gofmt-before-save)
 (add-hook 'go-mode-hook 
 					(lambda () 
 						(progn
@@ -148,6 +148,13 @@
 							(local-set-key (kbd "C-c C-a") 'go-import-add)
 							(local-set-key (kbd "C-c C-i") 'go-goto-imports))))
 														
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Javascript
+;;
+
+(add-hook 'js-mode-hook 'RET-behaves-as-LFD)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -161,3 +168,4 @@
 ;; top for some reason.
 (tool-bar-mode -1)
 (set-scroll-bar-mode 'nil)
+(put 'downcase-region 'disabled nil)
