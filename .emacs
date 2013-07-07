@@ -133,18 +133,9 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
-;; Helm
-;;
-(add-to-list 'load-path "~/lib/helm")
-(require 'helm-config)
-
-(global-set-key (kbd "C-c h") 'helm-mini)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
 ;; GO
 ;;
-(add-to-list 'load-path "~/local/go/misc/emacs")
+(add-to-list 'load-path "~/lib/go/misc/emacs")
 (require 'go-mode-load)
 (add-hook 'go-mode-hook
 	  '(lambda ()
@@ -156,7 +147,21 @@
 							(local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
 							(local-set-key (kbd "C-c C-a") 'go-import-add)
 							(local-set-key (kbd "C-c C-i") 'go-goto-imports))))
-														
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Sass
+;;
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . css-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; Appearance
+;;
+
+(add-to-list 'default-frame-alist '(foreground-color . "white"))
+(add-to-list 'default-frame-alist '(background-color . "black"))
+(add-to-list 'default-frame-alist '(cursor-color . "coral"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
