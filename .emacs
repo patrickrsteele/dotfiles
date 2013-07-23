@@ -1,6 +1,6 @@
 ;; Set up autoloading for all files in ~/.emacs.d/lisp. To update, run
 ;; update-autoloads-in-package-area.
-;(load "~/.emacs.d/lisp/loaddefs.el")
+;;(load "~/.emacs.d/lisp/loaddefs.el")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -13,8 +13,8 @@
     (local-set-key "\C-m" x)))
 
 ;; Use Adobe Source Sans Pro as the default font
-;(set-face-attribute 'default nil :font "Source Code Pro")
-;(set-face-attribute 'default nil :font "Droid Sans Mono-10")
+;;(set-face-attribute 'default nil :font "Source Code Pro")
+;;(set-face-attribute 'default nil :font "Droid Sans Mono-10")
 
 ;; Highlight selections
 (transient-mark-mode 't)
@@ -45,15 +45,15 @@
 ;; LaTeX and AuxTeX Mode
 ;;
 
-; Turn on auto-fill-mode, flyspell-mode
+					; Turn on auto-fill-mode, flyspell-mode
 (mapc (lambda (hook) (progn (add-hook hook 'auto-fill-mode)
 			    (add-hook hook 'flyspell-mode)))
       '(LaTeX-mode-hook tex-mode-hook plain-TeX-mode-hook 
 			AmS-TeX-mode-hook ConTeXt-mode-hook 
 			Texinfo-mode-hook docTeX-mode-hook))
 
-; Disable font-locking for sub- and super-scripts in the various
-; AuxTeX modes
+;; Disable font-locking for sub- and super-scripts in the various
+;; AuxTeX modes
 (setq font-latex-fontify-script nil)
 (setq font-latex-fontify-sectioning 'color)
 
@@ -97,7 +97,7 @@
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'font-lock-mode)
 
-; Recognize *.hs-boot files as Haskell files
+;; Recognize *.hs-boot files as Haskell files
 (add-to-list 'auto-mode-alist '("\\.hs-boot\\'" . haskell-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -142,11 +142,11 @@
 	     (setq default-tab-width 2)))
 (add-hook 'before-save-hook #'gofmt-before-save)
 (add-hook 'go-mode-hook 
-					(lambda () 
-						(progn
-							(local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
-							(local-set-key (kbd "C-c C-a") 'go-import-add)
-							(local-set-key (kbd "C-c C-i") 'go-goto-imports))))
+	  (lambda () 
+	    (progn
+	      (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
+	      (local-set-key (kbd "C-c C-a") 'go-import-add)
+	      (local-set-key (kbd "C-c C-i") 'go-goto-imports))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -162,6 +162,7 @@
 (add-to-list 'default-frame-alist '(foreground-color . "white"))
 (add-to-list 'default-frame-alist '(background-color . "black"))
 (add-to-list 'default-frame-alist '(cursor-color . "coral"))
+(set-default-font "Inconsolata 14")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -169,7 +170,7 @@
 ;;
 
 ;; fix for Ubuntu 10.10 problem
-;(setq flyspell-issue-welcome-flag nil)
+;;(setq flyspell-issue-welcome-flag nil)
 
 ;; Remove the toolbar; has to be done down here, rather than at the
 ;; top for some reason.
