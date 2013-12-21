@@ -107,8 +107,8 @@ export PATH=$PATH":~/bin"
 export GOPATH="/home/prsteele/local/go"
 export PATH=$PATH":~/lib/go/bin"
 
-# Bind CAPSLOCK to CTRL
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+# Support Pyomo
+export PATH=$PATH":~/lib/coopr/bin"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
