@@ -11,14 +11,6 @@ case $- in
       *) return;;
 esac
 
-# User specific aliases and functions
-
-# Turn off the touchpad
-synclient TouchpadOff=1
-
-# Turn on the touchpad
-#synclient TouchpadOff=0
-
 # Color codes
 # Black       0;30	Dark Gray		1;30
 # Blue        0;34	Light Blue		1;34
