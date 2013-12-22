@@ -5,6 +5,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
 # User specific aliases and functions
 
 # Turn off the touchpad
@@ -60,10 +66,22 @@ sepcolor=${purple}
 
 PS1="${timecolor}\t \`date '+%a %d %b %Y'\` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
 
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
 # Read and update history after every command; useful when working
 # with multiple terminal windows
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -n"
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # Aliases
 alias ls='ls --color'
@@ -85,11 +103,21 @@ export GIT_EDITOR="emacs -Q"
 # Add local executables to the path
 export PATH=$PATH":~/bin"
 
-# Set up GOLANG
-export GOROOT=~/local/go
+# Suppose the GO language
+export GOPATH="/home/prsteele/local/go"
+export PATH=$PATH":~/lib/go/bin"
 
-# Add GO to the path
-export PATH=$PATH:$GOROOT/bin
+# Support Pyomo
+export PATH=$PATH":~/lib/coopr/bin"
 
-# Bind CAPSLOCK to CTRL
-/usr/bin/setxkbmap -option "ctrl:nocaps"
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
