@@ -1,0 +1,9 @@
+# Wait 250ms before repeating a key, then repeat 50 times/second
+xset r rate 250 50
+
+# Turn off the touchpad
+synclient TouchpadOff=1
+
+# Start up a screensaver, killing one if it exists
+xscreensaver-command -exit
+xscreensaver -no-splash &
