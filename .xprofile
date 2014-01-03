@@ -4,3 +4,6 @@ xset r rate 250 50
 # Start up a screensaver, killing one if it exists
 xscreensaver-command -exit
 xscreensaver -no-splash &
+
+# Rotate my second monitor
+/home/prsteele/bin/dual-screen
