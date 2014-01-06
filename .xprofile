@@ -7,3 +7,6 @@ xscreensaver -no-splash &
 
 # Rotate my second monitor
 /home/prsteele/bin/dual-screen
+
+# Set up some backgrounds
+bash /home/prsteele/.fehbg
