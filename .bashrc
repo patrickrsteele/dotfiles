@@ -90,7 +90,7 @@ export BIBINPUTS=".:~/share//:"
 export PYTHONPATH="./:/home/prsteele/share//:"
 
 # Make emacs the default git editor
-export GIT_EDITOR="emacs -Q"
+export GIT_EDITOR="emacs --no-splash --no-desktop"
 
 # Add local executables to the path
 export PATH=$PATH":~/bin"
