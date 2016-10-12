@@ -5,19 +5,28 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
 
-# User specific aliases and functions
-
-# Turn off the touchpad
-#synclient TouchpadOff=1
-
-# Turn on the touchpad
-#synclient TouchpadOff=0
+# Support 256 color terminals, but don't mess with tmux.
+if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ]
+then
+  export TERM=xterm-256color
+fi
 
 # Color codes
 # Black       0;30	Dark Gray		1;30
@@ -63,8 +72,9 @@ hostcolor=${cyan}
 timecolor=${green}
 dircolor=${green}
 sepcolor=${purple}
+gitcolor=${yellow}
 
-PS1="${timecolor}\t \`date '+%a %d %b %Y'\` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h ${sepcolor}\$ ${NC}"
+PS1="${timecolor}\t \`date '+%a %d %b %Y'\` ${sepcolor}[${dircolor}\w${sepcolor}]\n${usercolor}\u${sepcolor}@${hostcolor}\h${gitcolor}\$(__git_ps1) ${sepcolor}\$ ${NC}"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -73,11 +83,6 @@ HISTCONTROL=ignoreboth
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# Read and update history after every command; useful when working
-# with multiple terminal windows
-#shopt -s histappend
-#export PROMPT_COMMAND="history -a; history -n"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -119,17 +124,6 @@ export PATH="/opt/cabal/1.22/bin:"$PATH
 # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/prsteele/lib/gurobi652/linux64/lib"
 export GUROBI_HOME="/home/prsteele/lib/gurobi652/linux64"
 export LD_LIBRARY_PATH="${GUROBI_HOME}/lib"
-
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
