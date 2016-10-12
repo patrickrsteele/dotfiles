@@ -76,8 +76,8 @@ HISTFILESIZE=2000
 
 # Read and update history after every command; useful when working
 # with multiple terminal windows
-shopt -s histappend
-export PROMPT_COMMAND="history -a; history -n"
+#shopt -s histappend
+#export PROMPT_COMMAND="history -a; history -n"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -110,6 +110,16 @@ export PATH=$PATH":~/lib/go/bin"
 # Support Pyomo
 export PATH=$PATH":~/lib/coopr/bin"
 
+export PATH="/opt/ghc/7.10.3/bin:"$PATH
+export PATH="/opt/cabal/1.22/bin:"$PATH
+
+# Configure Gurobi
+# export GUROBI_HOME="/home/prsteele/lib/gurobi563/linux64"
+# export LD_LIBRARY_PATH="${GUROBI_HOME}/lib"
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/prsteele/lib/gurobi652/linux64/lib"
+export GUROBI_HOME="/home/prsteele/lib/gurobi652/linux64"
+export LD_LIBRARY_PATH="${GUROBI_HOME}/lib"
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -120,3 +130,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

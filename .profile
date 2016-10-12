@@ -25,3 +25,4 @@ fi
 if [ -d "$HOME/lib/go/bin" ]; then
     PATH="$HOME/lib/go/bin:$PATH"
 fi
+
