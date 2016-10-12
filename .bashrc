@@ -92,15 +92,9 @@ shopt -s checkwinsize
 alias ls='ls --color'
 alias ll='ls -l'
 
-# Fix Matlab version compatibility issue
-alias matlab='matlab -glnx86'
-
 # Export LaTeX environment variables to include ~/share as a search path for packages
 export TEXINPUTS=".:~/share//:"
 export BIBINPUTS=".:~/share//:"
-
-# Help Python find local modules
-export PYTHONPATH="./:/home/prsteele/share//:"
 
 # Make emacs the default git editor
 export GIT_EDITOR="emacs -Q"
@@ -108,20 +102,10 @@ export GIT_EDITOR="emacs -Q"
 # Add local executables to the path
 export PATH=$PATH":~/bin"
 
-# Suppose the GO language
-export GOPATH="/home/prsteele/local/go"
-export PATH=$PATH":~/lib/go/bin"
-
-# Support Pyomo
-export PATH=$PATH":~/lib/coopr/bin"
-
 export PATH="/opt/ghc/7.10.3/bin:"$PATH
 export PATH="/opt/cabal/1.22/bin:"$PATH
 
 # Configure Gurobi
-# export GUROBI_HOME="/home/prsteele/lib/gurobi563/linux64"
-# export LD_LIBRARY_PATH="${GUROBI_HOME}/lib"
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:"/home/prsteele/lib/gurobi652/linux64/lib"
 export GUROBI_HOME="/home/prsteele/lib/gurobi652/linux64"
 export LD_LIBRARY_PATH="${GUROBI_HOME}/lib"
 
