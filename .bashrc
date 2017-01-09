@@ -104,7 +104,5 @@ export PATH="/opt/ghc/bin:"$PATH
 # Support 256 color terminals, but don't mess with tmux.
 if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ]
 then
-  export TERM=xterm-256color
+    export TERM=xterm-256color
 fi
-
-
