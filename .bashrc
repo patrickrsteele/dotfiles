@@ -86,9 +86,6 @@ shopt -s checkwinsize
 alias ls='ls --color'
 alias ll='ls -l'
 
-# Fix Matlab version compatibility issue
-alias matlab='matlab -glnx86'
-
 # Export LaTeX environment variables to include ~/share as a search path for packages
 export TEXINPUTS=".:~/share//:"
 export BIBINPUTS=".:~/share//:"
@@ -102,12 +99,7 @@ export GIT_EDITOR="emacs -Q"
 # Add local executables to the path
 export PATH=$PATH":~/bin"
 
-# Suppose the GO language
-export GOPATH="/home/prsteele/local/go"
-export PATH=$PATH":~/lib/go/bin"
-
-# Support Pyomo
-export PATH=$PATH":~/lib/coopr/bin"
+export PATH="/opt/ghc/bin:"$PATH
 
 # Support 256 color terminals, but don't mess with tmux.
 if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ]
