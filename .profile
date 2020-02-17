@@ -26,7 +26,7 @@ if [ -d "$HOME/lib/go/bin" ]; then
     PATH="$HOME/lib/go/bin:$PATH"
 fi
 
-/home/prsteele/bin/dual-screen
 xset r rate 250 50
-setxkbmap -option caps:super
+~/bin/dual-screen
+setxkbmap -option caps:ctrl_modifier
 . ~/.fehbg 

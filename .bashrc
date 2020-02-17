@@ -38,7 +38,7 @@ esac
 # Light blue	94	Light blue background	104
 # Light purple	95	Light purple background	105
 # Turquoise	96	Turquoise background	106
-# White		97	
+# White		97
 
 
 # PS1 Appearance
@@ -90,14 +90,12 @@ alias ll='ls -l'
 export TEXINPUTS=".:~/share//:"
 export BIBINPUTS=".:~/share//:"
 
-# Help Python find local modules
-export PYTHONPATH="./:/home/prsteele/share//:"
-
 # Make emacs the default git editor
 export GIT_EDITOR="emacs -Q"
 
 # Add local executables to the path
 export PATH=$PATH":~/bin"
+export PATH="~/.local/bin":$PATH
 
 export PATH="/opt/ghc/bin:"$PATH
 
@@ -106,3 +104,11 @@ if [ "$TERM" != "screen" ] && [ "$TERM" != "screen-256color" ]
 then
     export TERM=xterm-256color
 fi
+
+# Support virtualenvwrapper
+export WORKON_HOME=/home/prsteele/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=`which python3.7`
+export VIRTUALENVWRAPPER_SCRIPT=/home/prsteele/.local/bin/virtualenvwrapper.sh
+source /home/prsteele/.local/bin/virtualenvwrapper_lazy.sh
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
